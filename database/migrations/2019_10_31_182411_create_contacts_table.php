@@ -22,6 +22,7 @@ class CreateContactsTable extends Migration
             $table->string('signed_contract')->nullable();
             $table->string('payment_plan')->nullable();
             $table->string('sep')->nullable();
+            $table->string('tutor')->nullable();
             $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->timestamps();

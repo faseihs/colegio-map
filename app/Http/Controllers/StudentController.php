@@ -79,6 +79,7 @@ class StudentController extends Controller
             $contactDetails["signed_contract"]=$request["signed_contract"];
             $contactDetails["payment_plan"]=$request["payment_plan"];
             $contactDetails["sep"]=$request["sep"];
+            $contactDetails["tutor"]=$request["tutor"];
             $contact=Contact::create($contactDetails);
 
             $documentDetails=['student_id'=>$student->id];
@@ -172,6 +173,7 @@ class StudentController extends Controller
             $contactDetails["signed_contract"]=$request["signed_contract"];
             $contactDetails["payment_plan"]=$request["payment_plan"];
             $contactDetails["sep"]=$request["sep"];
+            $contactDetails["tutor"]=$request["tutor"];
             $contact->update($contactDetails);
 
 

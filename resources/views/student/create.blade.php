@@ -240,6 +240,14 @@
                                 <input type="text" name="sep" class="form-control">
                             </div>
                         </div>
+                        <div class="row form-group">
+                            <div class="col-md-2 text-right">
+                                <label for="name">Tutor</label>
+                            </div>
+                            <div class="col-md-10">
+                                <input type="text" name="tutor" class="form-control">
+                            </div>
+                        </div>
 
 
                     </div>

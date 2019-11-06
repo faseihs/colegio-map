@@ -23,6 +23,7 @@ class CreateStudentsTable extends Migration
             $table->string('classroom_number')->nullable();
             $table->string('semester')->nullable();
             $table->date('date_of_admission')->nullable();
+
             $table->primary('id');
             $table->softDeletes();
             $table->timestamps();
