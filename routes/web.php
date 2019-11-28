@@ -18,7 +18,7 @@ Route::get('/config-cache', function () {
     \Illuminate\Support\Facades\Artisan::call("config:cache");
 });
 
-Route::get('/config-cache', function () {
+Route::get('/dump-autoload', function () {
     \Illuminate\Support\Facades\Artisan::call("dump-autoload");
 });
 Auth::routes();
