@@ -1,5 +1,5 @@
 {
-    "Name": "Nombre de pila",
+    "Name": "Nombre",
     "Group": "Grupo",
     "Number": "Numero",
     "Last Name": "Apellido",
@@ -9,10 +9,10 @@
     "Matriculation Number": "Matricula",
     "Date of admission": "Fecha de inscripción",
     "Semester": "Semestre",
-    "Birth Certificate": "Certificado de Nacimiento",
+    "Birth Certificate": "Acta de Nacimiento",
     "CURP": "CURP",
     "High School Certificate": "Certificado de Secundaria",
-    "Photos": "Photos",
+    "Photos": "Fotos",
     "Home Address": "Domicilio",
     "Official ID": "Identificación Oficial",
     "Insurance": "Seguro",
@@ -26,6 +26,7 @@
     "SEP": "SEP",
     "Student ID": "Student ID",
     "Created At": "Creado en",
-    "Document Details": "Detalles del documento",
-    "Contact Details": "Detalles de contacto"
+    "Document Details": "Documentos",
+    "Contact Details": "Detalles de contacto",
+    "Clasroom Number": "Número de Grupo"
 }
