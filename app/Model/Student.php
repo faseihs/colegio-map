@@ -16,11 +16,15 @@ class Student extends Model
 
     protected $guarded=[];
 
+
     public function document(){
         return $this->hasOne('App\Model\Document');
     }
 
     public function contact(){
         return $this->hasOne('App\Model\Contact');
+    }
+    public function contacts(){
+        return $this->hasMany('App\Model\Contact');
     }
 }

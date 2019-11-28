@@ -22,16 +22,24 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-2 text-right">
-                                    <label for="name">Name</label>
+                                    <label for="name">{{__("Name")}}</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input type="text" name="name" class="form-control" required>
                                 </div>
                             </div>
+                        <div class="row form-group">
+                            <div class="col-md-2 text-right">
+                                <label for="name">{{__("Last Name")}}</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" name="last_name" class="form-control" required>
+                            </div>
+                        </div>
 
                             <div class="row form-group">
                                 <div class="col-md-2 text-right">
-                                    <label for="name">Group</label>
+                                    <label for="name">{{__("Group")}}</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input type="text" name="group" class="form-control" required>
@@ -40,7 +48,7 @@
 
                             <div class="row form-group">
                                 <div class="col-md-2 text-right">
-                                    <label for="name">Date Of Birth</label>
+                                    <label for="name">{{__("DOB")}}</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input type="date" name="dob" class="form-control">
@@ -48,7 +56,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-2 text-right">
-                                    <label for="age">Age</label>
+                                    <label for="age">{{__("Age")}}</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input type="number" name="age" class="form-control">
@@ -56,7 +64,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-2 text-right">
-                                    <label for="age">Program</label>
+                                    <label for="age">{{__("Program")}}</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input type="text" name="program" class="form-control">
@@ -64,7 +72,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-2 text-right">
-                                    <label for="age">Classroom #</label>
+                                    <label for="age">{{__("Clasroom Number")}}</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input type="text" name="classroom_number" class="form-control">
@@ -72,7 +80,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-2 text-right">
-                                    <label for="age">Semester</label>
+                                    <label for="age">{{__("Semester")}}</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input type="number" name="semester" class="form-control">
@@ -80,7 +88,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-2 text-right">
-                                    <label for="name">Date Of Admission</label>
+                                    <label for="name">{{__("Date of admission")}}</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input type="date" name="date_of_admission" class="form-control">
@@ -99,13 +107,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Document Details</div>
+                    <div class="card-header">{{__("Document Details")}}</div>
 
                     <div class="card-body">
 
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Birth Certificate</label>
+                                <label for="name">{{__("Birth Certificate")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="birth_certificate" class="form-control">
@@ -113,7 +121,7 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">CURP</label>
+                                <label for="name">{{__("CURP")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="curp" class="form-control">
@@ -122,7 +130,7 @@
 
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">High School Certificate</label>
+                                <label for="name">{{__("High School Certificate")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="high_school_certificate" class="form-control">
@@ -131,7 +139,7 @@
 
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Home Address</label>
+                                <label for="name">{{__("Home Address")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="home_address" class="form-control">
@@ -139,7 +147,7 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Photos</label>
+                                <label for="name">{{__("Photos")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="photos" class="form-control">
@@ -147,7 +155,7 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Official ID</label>
+                                <label for="name">{{__("Official ID")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="official_id" class="form-control">
@@ -155,7 +163,7 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Insurance</label>
+                                <label for="name">{{__("Insurance")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="insurance" class="form-control">
@@ -163,7 +171,7 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">AES</label>
+                                <label for="name">{{__("AES")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="aes" class="form-control">
@@ -177,12 +185,12 @@
 
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Contact Details</div>
+                    <div class="card-header">{{__("Contact Details")}}</div>
 
                     <div class="card-body">
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Phone Number</label>
+                                <label for="name">{{__("Phone Number")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="phone_number" class="form-control">
@@ -191,7 +199,7 @@
 
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Email</label>
+                                <label for="name">{{__("Email")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="email" name="email" class="form-control">
@@ -200,7 +208,7 @@
 
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Emergency Contact</label>
+                                <label for="name">{{__("Emergency Contact")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="emergency_contact" class="form-control">
@@ -208,7 +216,7 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Observations</label>
+                                <label for="name">{{__("Observations")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="observations" class="form-control">
@@ -217,7 +225,7 @@
 
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Signed Contract</label>
+                                <label for="name">{{__("Signed Contract")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="signed_contract" class="form-control">
@@ -225,7 +233,7 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Payment Plan</label>
+                                <label for="name">{{__("Payment Plan")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="payment_plan" class="form-control">
@@ -234,7 +242,7 @@
 
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">SEP</label>
+                                <label for="name">{{__("SEP")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="sep" class="form-control">
@@ -242,7 +250,7 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-2 text-right">
-                                <label for="name">Tutor</label>
+                                <label for="name">{{__("Tutor")}}</label>
                             </div>
                             <div class="col-md-10">
                                 <input type="text" name="tutor" class="form-control">

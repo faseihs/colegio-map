@@ -7,6 +7,7 @@ use App\Model\Document;
 use App\Model\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\Facades\DataTables;
 
 class StudentController extends Controller
 {
@@ -61,6 +62,7 @@ class StudentController extends Controller
             $studentDetails=[];
             $studentDetails["id"]=$request["id"];
             $studentDetails["name"]=$request["name"];
+            $studentDetails["last_name"]=$request["last_name"];
             $studentDetails["group"]=$request["group"];
             $studentDetails["dob"]=$request["dob"];
             $studentDetails["age"]=$request["age"];
@@ -123,6 +125,7 @@ class StudentController extends Controller
     public function edit($id)
     {
         //
+
         $student=Student::findOrFail($id);
         $document=$student->document;
         $contact=$student->contact;
@@ -155,6 +158,7 @@ class StudentController extends Controller
             $studentDetails=[];
             $studentDetails["id"]=$request["id"];
             $studentDetails["name"]=$request["name"];
+            $studentDetails["last_name"]=$request["last_name"];
             $studentDetails["group"]=$request["group"];
             $studentDetails["dob"]=$request["dob"];
             $studentDetails["age"]=$request["age"];
@@ -224,5 +228,22 @@ class StudentController extends Controller
             abort(404);
         $student->restore();
         return  redirect('/student')->with('success','Restored Successfully');
+    }
+
+    public function ajaxData(Request $request){
+        $students= Student::all();
+        foreach ($students as $s){
+            $s->contact;
+        }
+        return DataTables::of($students)->toJson();
+    }
+
+
+    public function ajaxTrashedData(Request $request){
+        $students= Student::onlyTrashed()->get();
+        foreach ($students as $s){
+            $s->contact;
+        }
+        return DataTables::of($students)->toJson();
     }
 }

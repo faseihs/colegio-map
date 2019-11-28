@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07ed26fb-f455-4918-879e-6a19d77250bf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/students.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/students.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_31_181244_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_31_181244_create_students_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_31_182411_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_31_182411_create_contacts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/student/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/student/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,10 +125,13 @@
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SymgAnVydrMuw88Fplz8XWBTm4" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -142,12 +151,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Laravel.Unnamed">
-    <configuration name="Unnamed" type="LaravelStorm_run_conf_serve" factoryName="Laravel">
+  <component name="RunManager" selected="Laravel.App">
+    <configuration name="App" type="LaravelStorm_run_conf_serve" factoryName="Laravel">
       <option name="host" value="localhost" />
       <option name="port" value="8000" />
       <option name="route" value="/" />
-      <option name="browser" value="53e2f627-b1a7-4dfa-bfa7-5b83cc034776" />
+      <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="interpreterName" value="" />
       <method v="2" />
     </configuration>
@@ -164,7 +173,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Laravel.Unnamed" />
+      <item itemvalue="Laravel.App" />
       <item itemvalue="PHPUnit.phpunit.xml" />
     </list>
   </component>
@@ -181,6 +190,8 @@
       <workItem from="1572544319741" duration="10479000" />
       <workItem from="1572857216050" duration="268000" />
       <workItem from="1572891300087" duration="600000" />
+      <workItem from="1574863974069" duration="3352000" />
+      <workItem from="1574877555856" duration="6978000" />
     </task>
     <servers />
   </component>

@@ -20,6 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>'auth'],function (){
-   Route::resource('/student','StudentController');
+    Route::resource('/student','StudentController');
     Route::get('/student/{id}/restore','StudentController@restore');
+
+    Route::post('student-data','StudentController@ajaxData');
+    Route::post('student-data-trashed','StudentController@ajaxTrashedData');
 });
