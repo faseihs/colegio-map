@@ -14,7 +14,13 @@
 Route::get('/', function () {
     return redirect('/login');
 });
+Route::get('/config-cache', function () {
+    \Illuminate\Support\Facades\Artisan::call("config:cache");
+});
 
+Route::get('/config-cache', function () {
+    \Illuminate\Support\Facades\Artisan::call("dump-autoload");
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
