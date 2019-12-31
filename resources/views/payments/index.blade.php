@@ -186,6 +186,7 @@
             </div>
         </div>
     </div>
+   </div>
 
     <!-- Costs Modal -->
     <div class="modal" id="myModal" tabindex="-1" role="dialog">
