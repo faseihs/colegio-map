@@ -131,8 +131,7 @@
                             s+=`<a class="btn btn-success btn-sm" href="/student/${id}/restore">Restore</a>`;
 
                          @role('Super Admin')
-                        s+=`<a class="btn btn-success btn-sm mr-2"  href="/student/${id}/payments">Payments</a>`;
-
+                            s+=`<a class="btn btn-success btn-sm mr-2"  href="/student/${id}/payments">Payments</a>`;
                         @endrole
 
                         if(!data.deleted_at)
