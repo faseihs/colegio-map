@@ -127,6 +127,7 @@
                 {"data":"id",render:function (id,row,data) {
 
                     let s =``;
+                        s+=`<a class="btn btn-success btn-sm mr-2"  href="/student/${id}/payments">Payments</a>`;
                          if(data.deleted_at)
                             s+=`<a class="btn btn-success btn-sm" href="/student/${id}/restore">Restore</a>`;
 
