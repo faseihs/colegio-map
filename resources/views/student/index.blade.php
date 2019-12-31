@@ -130,11 +130,12 @@
                          if(data.deleted_at)
                             s+=`<a class="btn btn-success btn-sm" href="/student/${id}/restore">Restore</a>`;
 
-                         @role('Super Admin')
-                            s+=`<a class="btn btn-success btn-sm mr-2"  href="/student/${id}/payments">Payments</a>`;
-                        @endrole
+
 
                         if(!data.deleted_at)
+                            @role('Super Admin')
+                                s+=`<a class="btn btn-success btn-sm mr-2"  href="/student/${id}/payments">Payments</a>`;
+                            @endrole
                             s+=`<a class="btn btn-sm btn-primary" href="/student/${id}/edit">View/Edit</a>`;
 
                             s+=`<a class="btn btn-sm btn-danger ml-2" onclick="deleteObj(${id})" href="#">Delete</a>
