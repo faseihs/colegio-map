@@ -27,4 +27,12 @@ class Student extends Model
     public function contacts(){
         return $this->hasMany('App\Model\Contact');
     }
+    
+    public function plans(){
+        return $this->hasMany('App\Model\StudentPlan');
+    }
+    
+    public function payments(){
+        return $this->hasMany('App\Model\Payment');
+    }
 }

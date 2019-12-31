@@ -52,7 +52,7 @@
                                     <label for="name">{{__("DOB")}}</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input type="date" name="dob" class="form-control" value="{{$student->dob}}">
+                                    <input id="date" type="date" name="dob" class="form-control" value="{{$student->dob}}">
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -60,7 +60,7 @@
                                     <label for="age">{{__("Age")}}</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input type="number" name="age" class="form-control" value="{{$student->age}}">
+                                    <input id="age" type="number" name="age" class="form-control" value="{{$student->age}}">
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -68,7 +68,16 @@
                                     <label for="age">{{__("Program")}}</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input type="text" name="program" class="form-control" value="{{$student->program}}">
+                                   {{-- <input type="text" name="program" class="form-control" value="{{$student->program}}">--}}
+                                    <select required name="program" class="form-control">
+                                        <option>Select</option>
+                                        <option {{$student->program=="TPM"?"selected":""}} value="TPM">TPM</option>
+                                        <option {{$student->program=="TPPM"?"selected":""}} value="TPM">TPPM</option>
+                                        <option {{$student->program=="TPMU"?"selected":""}} value="TPMU">TPMU</option>
+                                        <option {{$student->program=="DPM"?"selected":""}} value="DPM">DPM</option>
+                                        <option {{$student->program=="DEI"?"selected":""}} value="DEI">DEI</option>
+                                        <option {{$student->program=="CEI"?"selected":""}} value="CEI">CEI</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -272,4 +281,26 @@
 
 
     </form>
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            $('#date').change(function () {
+                let val = $(this).val();
+                if(val.length>1){
+                    let age =calculate_age(new Date(val));
+                    if(age<100)
+                        $('#age').val(age);
+                }
+            })
+        });
+
+        function calculate_age(dob) {
+            var diff_ms = Date.now() - dob.getTime();
+            var age_dt = new Date(diff_ms);
+
+            return Math.abs(age_dt.getUTCFullYear() - 1970);
+        }
+    </script>
 @endsection

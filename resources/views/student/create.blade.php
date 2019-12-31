@@ -51,7 +51,7 @@
                                     <label for="name">{{__("DOB")}}</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input type="date" name="dob" class="form-control">
+                                    <input id="date" type="date" name="dob" class="form-control">
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -59,7 +59,7 @@
                                     <label for="age">{{__("Age")}}</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input type="number" name="age" class="form-control">
+                                    <input id="age" type="number" name="age" class="form-control">
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -67,7 +67,16 @@
                                     <label for="age">{{__("Program")}}</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input type="text" name="program" class="form-control">
+                                    <select name="program" class="form-control">
+                                        <option>Select</option>
+                                        <option value="TPM">TPM</option>
+                                        <option value="TPM">TPPM</option>
+                                        <option value="TPMU">TPMU</option>
+                                        <option value="DPM">DPM</option>
+                                        <option value="DEI">DEI</option>
+                                        <option value="CEI">CEI</option>
+                                    </select>
+                                   {{-- <input type="text" name="program" class="form-control">--}}
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -271,4 +280,27 @@
 
 
     </form>
+@endsection
+
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            $('#date').change(function () {
+                let val = $(this).val();
+                if(val.length>1){
+                    let age =calculate_age(new Date(val));
+                    if(age<100)
+                        $('#age').val(age);
+                }
+            })
+        });
+
+        function calculate_age(dob) {
+            var diff_ms = Date.now() - dob.getTime();
+            var age_dt = new Date(diff_ms);
+
+            return Math.abs(age_dt.getUTCFullYear() - 1970);
+        }
+    </script>
 @endsection

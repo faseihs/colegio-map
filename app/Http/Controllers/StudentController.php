@@ -19,6 +19,7 @@ class StudentController extends Controller
     public function index(Request $request)
     {
         //
+        $roles=collect(["Super Admin","Admin"]);
         $type="current";
         if($request->has('type'))
             $type=$request->type;
@@ -26,7 +27,7 @@ class StudentController extends Controller
         if($type=="current")
             $students=Student::orderBy('name')->paginate(10);
         else $students=Student::onlyTrashed()->paginate(10);
-        return  view('student.index',compact('students','type'));
+        return  view('student.index',compact('students','type','roles'));
     }
 
     /**
@@ -128,7 +129,16 @@ class StudentController extends Controller
 
         $student=Student::findOrFail($id);
         $document=$student->document;
+        if(!$document){
+            $document= new Document();
+            $document->student_id=$student->id;
+        }
         $contact=$student->contact;
+        if(!$contact){
+            $contact=new Contact();
+            $contact->student_id=$student->id;
+            $contact->save();
+        }
         return view('student.edit',compact('student','document','contact'));
 
     }
