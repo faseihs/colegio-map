@@ -25,7 +25,8 @@ class CreateStudentPlansTable extends Migration
             $table->float("reg_fee")->default(0);
             $table->float("re_reg_free")->default(0);
             $table->float(" cost_extra_materials")->default(0);
-
+            $table->integer("start_month")->default(1);
+            $table->integer("end_month")->default(1);
             $table->unsignedBigInteger("student_id");
             $table->timestamps();
         });

@@ -20,10 +20,13 @@ class PaymentController extends Controller
         $user=Auth::user();
         $plans=$student->plans;
         foreach ($plans as $plan) {
-            $months=6;
-            if($plan->type=="A")
+            $cost=$plan->cost;
+            if(!$cost){
                 $months=6;
-            else $months=5;
+            }
+            else {
+                $months=($cost->end_month-$cost->start_month)+1;
+            }
             $subject_fee_semester=$plan->subject_fee_semester/$months;
             $additonal_subject_fee_semester=$plan->additonal_subject_fee_semester/6;
             $extra_curricular_subject_fee_month=$plan->extra_curricular_subject_fee_month;
@@ -36,10 +39,10 @@ class PaymentController extends Controller
 
             $total_semester_cost = $total_monthly_cost*6;
 
-            $subject_fee_semester=round($subject_fee_semester/100)*100;
+            $subject_fee_semester=round($subject_fee_semester);
             //dd(floor($subject_fee_semester/100)*100);
             $plan->subject_fee_month =$subject_fee_semester;
-            $plan->total_monthly_cost=round($total_monthly_cost/100)*100;
+            $plan->total_monthly_cost=round($total_monthly_cost);
             $plan->total_semester_cost=$total_semester_cost;
 
         }

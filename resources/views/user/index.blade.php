@@ -30,6 +30,7 @@
 
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Role</th>
                                 <th>Joined</th>
                                     @role('Super Admin')
                                 <th></th>
@@ -42,6 +43,7 @@
                                 <tr>
                                     <td><a href="/user/{{$a->id}}">{{$a->name}}</a></td>
                                     <td>{{$a->email}}</td>
+                                    <td>{{ $a->getRoleNames() }}</td>
                                     <td>{{Carbon::parse($a->created_at)->diffForHumans()}}</td>
 
                                         @role('Super Admin')

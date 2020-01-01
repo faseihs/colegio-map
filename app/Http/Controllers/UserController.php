@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -29,20 +30,31 @@ class UserController extends Controller
 
     public function show($id){
         $user=User::findOrFail($id);
+        $roles = $user->getRoleNames();
+        $role=$roles->first();
+        
+        $roles= Role::pluck('name','name')->all();
+        
+       // dd($role,$roles);
         if(!$user)
             abort(404);
-        return view('user.show',compact(['user']));
+        return view('user.show',compact('user','roles','role'));
     }
 
-    public function update(Request $request,$slug){
-        $user=User::where('slug',$slug)->first();
+    public function update(Request $request,$id){
+        //dd($request->all());
+        $user=User::where('id',$id)->first();
         if(!$user)
             abort(404);
         $input = [];
         $input["name"] = $request->name;
         $this->validate($request,[
             'email' => 'unique:users,email,'.$user->id,
+            'role'=>'required'
         ]);
+
+        $user->removeRole($request->role);
+        $user->assignRole($request->role);
         $input["email"] = $request->email;
         if($request->input('password')!=null){
             $this->validate($request,[
@@ -54,11 +66,12 @@ class UserController extends Controller
             $input["password"]=bcrypt($request->input('password'));
         }
         $user->update($input);
-        return redirect('/admin/user/'.$user->slug)->with('success','Updated Successfully');
+        return redirect('/users')->with('success','Updated Successfully');
     }
 
     public function addAdminShow(){
-        return view('user.add-admin');
+        $roles= Role::pluck('name','name')->all();
+        return view('user.add-admin',compact('roles'));
     }
 
 
@@ -67,6 +80,7 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role'=>'required'
         ]);
 
         try{
@@ -74,12 +88,9 @@ class UserController extends Controller
             $input=$request->all();
             $input["password"]=bcrypt($request->input('password'));
             $user=User::create($input);
-            $user->assignRole('Admin');
-            $profile=new Profile();
-            $profile->user_id=$user->id;
-            $profile->save();
+            $user->assignRole($request->role);
             DB::commit();
-            return redirect('/admin/users/Admin')->with('success','Added Admin Successfully');
+            return redirect('/users')->with('success','Added Admin Successfully');
         }
         catch(\Exception $e){
             DB::rollback();

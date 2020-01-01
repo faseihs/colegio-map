@@ -54,9 +54,16 @@
                             <li class="nav-item">
                                 <a class="nav-link"  href="/student">Students</a>
                             </li>
+                            @role("Super Admin")
                             <li class="nav-item">
                                 <a class="nav-link"  href="/users">Users</a>
                             </li>
+                            @endrole
+                            @hasanyrole("Super Admin|Admin")
+                                <li class="nav-item">
+                                    <a class="nav-link"  href="/cost">Costs</a>
+                                </li>
+                            @endhasanyrole
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

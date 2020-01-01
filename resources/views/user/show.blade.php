@@ -8,11 +8,16 @@
 
 @section('content')
 
-    <form method="POST" action="/admin/user/{{$user->slug}}" enctype="multipart/form-data">
+    <form method="POST" action="/user/{{$user->id}}" enctype="multipart/form-data">
         @csrf
+        <div class="row">
+            <div class="col-md-12">
+                @include('includes.errors')
+                @include('includes.flash')
+            </div>
+        </div>
         <div class="form-group row">
-            @include('includes.errors')
-            @include('includes.flash')
+           
             <div class="col-md-2 col-sm-12 text-right">
                 <label for="name">Name</label>
             </div>
@@ -34,7 +39,12 @@
                 <label for="name">Role</label>
             </div>
             <div class="col-md-8 col-sm-12">
-                <input autocomplete="off"  name="password_confirmation" class="form-control" type="password">
+                @php($options=["class"=>"form-control",'placeholder'=>"Select","required"])
+                @if ($user->hasrole("Super Admin"))
+                    @php($options[]="readonly")
+                @endif
+                {!! Form::select("role",$roles,$role,$options) !!}
+        
             </div>
         </div>
         <hr>

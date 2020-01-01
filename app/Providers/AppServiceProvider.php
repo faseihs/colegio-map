@@ -26,5 +26,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
+
+        \Str::macro('snakeToTitle', function($value) {
+            return title_case(str_replace('_', ' ', $value));
+        });
     }
 }
