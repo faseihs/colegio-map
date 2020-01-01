@@ -48,11 +48,14 @@
 
                                         @role('Super Admin')
                                     <td>
+                                        @if (!$a->hasrole("Super Admin"))
                                         <a onclick="clicked({{$a->id}})" href="#"><i class="fa fa-trash"></i></a>
                                         <form method="POST" id="del{{$a->id}}" action="/admin/delete-admin/{{$a->id}}">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE">
                                         </form>
+                                        @endif
+                                     
                                     </td>
                                         @endrole
 
