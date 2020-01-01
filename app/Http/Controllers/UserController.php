@@ -15,6 +15,11 @@ class UserController extends Controller
 {
     //
 
+    public function __construct()
+    {
+        $this->middleware(['role:Super Admin']);
+    }
+
     public function index(Request $request){
         $type="all";
         if($request->has("type"))
