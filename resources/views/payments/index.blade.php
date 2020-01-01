@@ -65,7 +65,7 @@
                    <div class="card-body">
                        <div class="row">
                            <div class="col-md-2 text-center">
-                               <h1>A</h1>
+                               <h1>B</h1>
                            </div>
                            <div class="col-md-8">
                                <div class="row">
@@ -83,7 +83,7 @@
 
                        <div class="row">
                            <div class="col-md-2 text-center">
-                               <h1>B</h1>
+                               <h1>A</h1>
                            </div>
                            <div class="col-md-8">
                                <div class="row">
