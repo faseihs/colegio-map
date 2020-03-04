@@ -56,7 +56,7 @@ class PaymentController extends Controller
         $student = Student::findOrFail($id);
         $cost = Cost::findOrFail($request->cost_id);
         $this->validate($request,[
-           'program'=>'required',
+            'program'=>'required',
             'cost_id'=>'required|numeric',
             'type'=>'required',
             'subject_fee_semester'=>'numeric|min:0',
